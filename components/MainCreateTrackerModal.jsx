@@ -1,9 +1,18 @@
-export default function MainCreateTrackerModal() {
+export default function MainCreateTrackerModal(props) {
+  function addTracker(subject){
+    subject = document.querySelector(".tracker__subject").value
+    if(subject === ""){
+      alert("please enter ")
+      return
+    }
+    props.addTracker(subject)
+  }
+
   return (
     <>
       <section className="modal_overlay hidden"></section>
-      <section id="add__modal" className="hidden">
-        <header class="modal_header">
+      <section id="add__modal" className="">
+        <header className="modal_header">
           <svg
             id="exit__icon"
             clasName="icon"
@@ -12,6 +21,7 @@ export default function MainCreateTrackerModal() {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            onClick={props.toggleModal}
           >
             <path
               d="M18 6L6 18M6 6L18 18"
@@ -22,7 +32,7 @@ export default function MainCreateTrackerModal() {
             />
           </svg>
           <h3>New Tracker</h3>
-          <button id="create">Create</button>
+          <button id="create" onClick={addTracker}>Create</button>
         </header>
         <form action="" className="tracker">
           <label for="subject">Name</label>

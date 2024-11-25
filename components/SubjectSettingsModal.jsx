@@ -1,8 +1,8 @@
 export default function SubjectSettingsTrackerModal(){
     return(
         <>
-        <section className="modal_overlay hidden"></section>
-        <section id="settings__modal" className="hidden">
+        <section className="modal_overlay"></section>
+        <section id="settings__modal">
         <header className="modal_header">
             <svg
             id="exit__icon"
